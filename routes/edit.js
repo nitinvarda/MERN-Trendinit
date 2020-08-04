@@ -7,7 +7,7 @@ var mark = require('marked');
 router.get("/:id", function (req, res, next) {
     if (req.isAuthenticated()) {
         artic.findOne({ _id: req.params.id }, function (err, data) {
-            if (err) return console.log(err);
+            if (err) return console.error(err);
 
             res.json(data);
         })

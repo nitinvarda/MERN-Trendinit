@@ -147,11 +147,11 @@ app.get("/image/:filename", function (req, res) {
 app.post('/update/:id', upload, function (req, res, next) {
 
   artic.findOne({ _id: req.params.id }, (err, data) => {
-    console.log(data);
+
     if (err) return console.error(err);
 
     gfs.find({ filename: data.imagename }).toArray((err, file) => {
-      console.log(file[0]);
+
       if (!file || file[0].length === 0) {
         return res.status(404).json({
           err: 'no files exist'

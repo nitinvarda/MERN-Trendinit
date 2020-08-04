@@ -31,7 +31,7 @@ class Edit extends Component {
     componentDidMount() {
         axios.get("/edit/" + this.state.id)
             .then(res => {
-                console.log(res);
+
                 this.setState({
                     post_data: res.data,
                     title: res.data.title,

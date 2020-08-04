@@ -18,7 +18,7 @@ class Bynitin extends Component {
     componentDidMount() {
         axios.get('/' + this.state.name)
             .then(res => {
-                console.log(res);
+
                 this.setState({
                     data: res.data
                 })

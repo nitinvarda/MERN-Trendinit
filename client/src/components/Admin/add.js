@@ -45,7 +45,7 @@ class add extends Component {
         // console.log(add);
         axios.post("/add", form, config)
             .then(res => {
-                console.log(res);
+
                 this.setState({
                     confirmation: res.data
                 })
@@ -78,6 +78,11 @@ class add extends Component {
         if (this.state.confirmation === "success") {
             return <Redirect to={{ pathname: "/admin-home", state: { auth: true } }} />;
         }
+        // return (
+        //     <div>
+        //         <h1>hello</h1>
+        //     </div>
+        // )
         return (
             <div className="divstyle">
                 <h3 style={{ textAlign: "center", paddingTop: "10px" }}>Add Post
@@ -105,16 +110,19 @@ class add extends Component {
                             </div>
 
                         </div>
+                        <br />
                         <div className="by" >
                             <label><h4>by</h4></label>
                             <input type="text" name="by" className="byinput" value={this.state.by} onChange={this.onChange} />
 
                         </div>
                     </div>
+                    <br />
                     <label>upload an Image</label>
-                    <input type="file" name="myImage" onChange={this.fileHandler} />
+                    <input type="file" name="myImage" className="up-img" onChange={this.fileHandler} />
 
 
+                    <br />
                     <br />
                     <div className="desc">
                         <label><h4>Description</h4></label>

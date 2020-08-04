@@ -40,7 +40,7 @@ class Admin extends React.Component {
         }
         axios.post('/home/admin', requests)
             .then(response => {
-                console.log(response.data);
+
                 this.setState({
                     isLoggedin: response.data
                 })

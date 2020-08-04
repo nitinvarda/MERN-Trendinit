@@ -19,7 +19,7 @@ router.get("/", function (req, res, next) {
     else {
         return res.send("unauthorized");
     }
-    // console.log(hello);
+
 
 })
 

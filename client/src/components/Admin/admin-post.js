@@ -16,7 +16,7 @@ class Adminpost extends Component {
     componentDidMount() {
         axios.get("/article/" + this.state.id)
             .then(res => {
-                console.log(res.data);
+
                 this.setState({
                     data: res.data[0]
                 })
